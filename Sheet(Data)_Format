@@ -1,0 +1,21 @@
+Sub Archive()
+    
+    ActiveWindow.DisplayGridlines = False
+    
+    Sheets(Data).Name = "Aet"
+
+    Range("A1:XFD1048576").Select
+    With Selection.Font
+        .Name = "Calibri"
+        .Size = 10
+    Range("A1:XFD1048576").VerticalAlignment = xlCenter
+    Range("A1:XFD1048576").HorizontalAlignment = xlCenter
+    Range("Z:Z,AA:AA,AB:AB,AC:AC,AD:AD,AE:AE,AF:AF,BA:BA,BC:BC,CB:CB,CC:CC,CF:CF,CP:CP,CT:CT,CU:CU,CV:CV,DC:DC,DD:DD,DI:DI,DJ:DJ,DK:DK,DS:DS,DT:DT,DX:DX").NumberFormat="_($* #,##0.00_)"
+    Range("A1:EV1").Interior.Color = RGB(180, 180, 180)
+    Range("A1:EV1").Font.Bold = True
+    Range("A1",Range("A1").End(xlRight).End("xlDown").Cell.Borders.LineStyle = xlContinuous
+    Range("A1:XFD1048576").Columns.AutoFit
+    ActiveWorkbook.save
+  End With
+
+End Sub
